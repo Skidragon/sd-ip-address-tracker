@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./blank-card.module.scss";
+import styles from "./BlankCard.module.scss";
 export const BlankCard = ({
   children,
   style = {},
