@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+}
+$radius: 12px;
+.input {
+  width: 100%;
+  font-size: 1.8rem;
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+  padding: 0 1em;
+}
+
+.button {
+  border-top-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  background: var(--black);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.5em;
+}

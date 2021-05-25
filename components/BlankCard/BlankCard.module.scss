@@ -1,3 +1,12 @@
-.test {
-    
+.container {
+  background: var(--white);
+  border-radius: 24px;
+  h2 {
+    color: var(--dark-gray);
+    font-size: 1rem;
+  }
+  p {
+    color: var(--black);
+    font-size: 2rem;
+  }
 }
