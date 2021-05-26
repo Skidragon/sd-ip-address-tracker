@@ -4,6 +4,9 @@
 *::after {
   box-sizing: border-box;
 }
+* {
+  outline: 2px solid red;
+}
 * + * {
   margin: 1em 0 0;
 }
@@ -19,7 +22,7 @@
 }
 html,
 body {
-  font-size: 12px;
+  font-size: 16px;
   font-family: "Rubik", sans-serif;
   padding: 0;
   margin: 0;
@@ -36,4 +39,78 @@ a {
 }
 button {
   margin: 0;
+}
+// Home
+.container {
+  padding: 0 5vw;
+}
+.header {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background: url("../public/pattern-bg.png");
+  background-size: cover;
+  width: 100%;
+}
+.search-bar {
+  display: flex;
+  width: 100%;
+  max-width: 50ch;
+  margin-bottom: 2rem;
+  input {
+    flex: 1;
+    font-size: 1.2rem;
+    padding: 0 1.2em;
+    border-top-left-radius: 100vh;
+    border-bottom-left-radius: 100vh;
+  }
+  button {
+    border: none;
+    color: var(--white);
+    background: var(--black);
+    font-size: 2rem;
+    padding: 0.3em;
+    border-top-right-radius: 100vh;
+    border-bottom-right-radius: 100vh;
+  }
+}
+.status-card {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 50px;
+  background: var(--white);
+  position: relative;
+  top: -50%;
+  transform: translate(0, 50%);
+  .status-list {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    list-style-type: none;
+    padding: 2em 1em;
+    @media screen and (min-width: 1000px) {
+      flex-flow: row;
+      align-items: baseline;
+    }
+    & > * + * {
+      margin-left: 1em;
+      padding-left: 1em;
+    }
+  }
+  .status-item {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    flex: 1 1 100%;
+    max-width: 50ch;
+  }
+  .status-property {
+    font-size: 1rem;
+  }
+  .status-value {
+    flex: 1;
+    margin-top: 0.4em;
+    font-size: 2rem;
+    font-weight: 500;
+  }
 }
