@@ -2,17 +2,18 @@ import React from "react";
 import classNames from "classnames";
 import searchStyles from "./SearchBar.module.scss";
 export const SearchBar = ({
+  onEnter,
+  onClick,
   placeholder = "",
-  onTrigger = () => {},
   className = "",
   ...props
 }: {
+  onEnter: React.KeyboardEventHandler<HTMLInputElement>;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
   placeholder: string;
-  onTrigger: React.ReactEventHandler;
   className?: string;
   props?: React.HTMLAttributes<HTMLDivElement>;
 }) => {
-  console.log(className);
   return (
     <div
       className={classNames({
@@ -21,8 +22,17 @@ export const SearchBar = ({
       })}
       {...props}
     >
-      <input className={searchStyles.input} type="search" onKeyUp={onTrigger} />
-      <button className={searchStyles.button} onClick={onTrigger}>
+      <input
+        className={searchStyles.input}
+        placeholder={placeholder}
+        type="search"
+        onKeyUp={(e) => {
+          if (onEnter && e.key === "Enter") {
+            onEnter(e);
+          }
+        }}
+      />
+      <button className={searchStyles.button} onClick={onClick}>
         {">"}
       </button>
     </div>
